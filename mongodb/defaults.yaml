@@ -34,6 +34,10 @@ mongos:
   log_file: /var/log/mongos/mongos.log
   conf_path: /etc/mongodb.conf
   mongos: mongos
+  mongos_user: mongodb
+  mongos_group: mongodb
+  version: stable
+  repo_component: main
 
   use_repo: False
   use_ppa: False
