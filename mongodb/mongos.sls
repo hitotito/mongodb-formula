@@ -6,7 +6,7 @@ mongos_package:
   {% set code = salt['grains.get']('oscodename') %}
   pkgrepo.managed:
     - humanname: MongoDB.org Repo
-    - name: deb http://repo.mongodb.org/apt/{{ os }} {{ code }}/mongodb-org/stable main
+    - name: deb http://repo.mongodb.org/apt/{{ os }} {{ code }}/mongodb-org/{{ ms.version }} {{ ms.repo_component }}
     - file: /etc/apt/sources.list.d/mongodb.list
     - keyid: 7F0CEB10
     - keyserver: keyserver.ubuntu.com
@@ -17,8 +17,8 @@ mongos_package:
 mongos_log_file:
   file.directory:
     - name: {{ ms.log_path }}
-    - user: root
-    - group: root
+    - user: {{ ms.mongos_user }}
+    - group: {{ ms.mongos_group }}
     - mode: 755
     - makedirs: True
 
