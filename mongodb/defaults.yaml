@@ -33,6 +33,18 @@ mongos:
   log_file: /var/log/mongos/mongos.log
   conf_path: /etc/mongos.conf
   mongos: mongos
+  mongos_user: mongodb
+  mongos_group: mongodb
+  version: stable
+  repo_component: main
 
   settings:
     port: 27017
+
+mongoshell:
+  mongoshell_package: mongo
+  version: stable
+  repo_component: main
+  
+  use_repo: False
+  use_ppa: False

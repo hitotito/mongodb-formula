@@ -25,8 +25,8 @@ mongodb_user:
 mongos_log_path:
   file.directory:
     - name: {{ ms.log_path }}
-    - user: mongodb
-    - group: mongodb
+    - user: {{ ms.mongos_user }}
+    - group: {{ ms.mongos_group }}
     - mode: 755
     - makedirs: True
 
